@@ -10,7 +10,7 @@ export default function Header({ mode }: { mode: Mode }) {
   const textColor = isSecurity ? "text-blue-200" : "text-[#9f496e]";
 
   return (
-    <header className="sticky top-0 z-30 px-6 py-4 max-w-6xl mx-auto flex justify-between items-center">
+    <header className="sticky top-0 py-3 px-4 flex items-center justify-between max-w-5xl mx-auto z-20">
       {/* LEFT — SOCIALS */}
       <motion.div
         initial={{ x: -40, opacity: 0 }}
@@ -18,17 +18,18 @@ export default function Header({ mode }: { mode: Mode }) {
         transition={{ duration: 0.6 }}
         className="flex items-center space-x-4"
       >
-        <SocialIcon
+        <SocialIcon style={{ height: 28, width: 28 }}
+
           url="https://www.linkedin.com/in/aya-jermouni-80b020202/"
           fgColor={primaryColor}
           bgColor="transparent"
         />
-        <SocialIcon
-          url="https://www.instagram.com/aya.jermounii/"
+        <SocialIcon style={{ height: 28, width: 28 }}
+          url="https://www.instagram.com/itby.her/"
           fgColor={primaryColor}
           bgColor="transparent"
         />
-        <SocialIcon
+        <SocialIcon style={{ height: 28, width: 28 }}
           url="https://github.com/aya-jermouni"
           fgColor={primaryColor}
           bgColor="transparent"
@@ -47,14 +48,17 @@ export default function Header({ mode }: { mode: Mode }) {
             ?.scrollIntoView({ behavior: "smooth" })
         }
       >
-        <SocialIcon
+        <a href="#contactme">
+          <SocialIcon style={{ height: 28, width: 28 }}
           network="email"
           fgColor={primaryColor}
           bgColor="transparent"
-        />
+          />
+        </a>
         <span className="hidden md:inline text-sm uppercase">
           Contact me
         </span>
+
       </motion.div>
     </header>
   );

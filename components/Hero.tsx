@@ -61,37 +61,32 @@ export default function Hero({ mode, setMode }: Props) {
       {mode === "neutral" && (
         <>
           {/* LEFT — DEV */}
-          <div className="absolute left-10 top-1/2 -translate-y-1/2 pointer-events-none">
-            <p className="text-[25px] md:text-[65px] font-extrabold text-[#db79a4]/10 leading-none">
+          <div className="absolute left-8 xl:left-16 top-1/2 -translate-y-1/2 pointer-events-none">
+            <p className="text-[23px] md:text-[50px] xl:text-[60px]
+             font-semibold tracking-tight
+             text-[#db79a4]/8 leading-tight opacity-60">
               Building ideas
               <br />
               into experiences
             </p>
-            <br />
-            <br />
-            {mode === "neutral" && (
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm text-gray-500 opacity-80 select-none">
-                Explore Development
-              </div>
-            )}
+            <div className="mt-6 text-sm text-gray-500 opacity-80">
+              Explore Development
+            </div>
           </div>
 
           {/* RIGHT — SECURITY */}
-          <div className="absolute right-10 top-1/2 -translate-y-1/2 text-right pointer-events-none">
-            <p className="text-[25px] md:text-[65px] font-extrabold text-blue-200/10 leading-none">
+          <div className="absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 text-right pointer-events-none">
+            <p className="text-[23px] md:text-[50px] xl:text-[60px]
+             font-semibold tracking-tight
+             text-blue-200/8 leading-tight opacity-60">
               Protecting
               <br />
               systems & trust
             </p>
-            <br />
-            <br />
-            {mode === "neutral" && (
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm text-gray-500 opacity-80 select-none">
-                Explore Security
-              </div>
-            )}
+            <div className="mt-6 text-sm text-gray-500 opacity-80">
+              Explore Security
+            </div>
           </div>
-
         </>
       )}
 
@@ -99,13 +94,13 @@ export default function Hero({ mode, setMode }: Props) {
       <motion.div
         animate={{ x: mode === "dev" ? 110 : mode === "security" ? -110 : 0 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
-        className="relative z-10 flex flex-col items-center justify-end min-h-screen text-center pointer-events-none pt-24"
+        className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center pointer-events-none pt-10"
       >
         {/* TEXT ABOVE IMAGE */}
         {mode === "neutral" && (
           <div className="mb-6">
-            <h1 className="text-5xl font-extrabold tracking-tight">
-              IT {" "} <span className="text-[#ffacd0]">  BY</span>{" "}
+            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight">
+              IT <span className="text-[#ffacd0]">BY</span>{" "}
               <span className="text-[#ffe5f0]">HER</span>
             </h1>
 
@@ -113,8 +108,6 @@ export default function Hero({ mode, setMode }: Props) {
               {text}
               <Cursor cursorStyle="|" />
             </p>
-
-
           </div>
         )}
 
@@ -124,39 +117,29 @@ export default function Hero({ mode, setMode }: Props) {
           <motion.div
             className="absolute w-[520px] h-[520px] rounded-full border border-[#db79a4]/50 blur-[1px]"
             animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.8, 0.4] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 2, repeat: Infinity }}
           />
           <motion.div
             className="absolute w-[640px] h-[640px] rounded-full border border-[#ffcce2]/45 blur-[1.5px]"
             animate={{ scale: [1, 1.18, 1], opacity: [0.35, 0.7, 0.35] }}
-            transition={{ duration: 2.3, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 2.3, repeat: Infinity }}
           />
           <motion.div
             className="absolute w-[760px] h-[760px] rounded-full border border-[#db79a4]/35 blur-[2px]"
             animate={{ scale: [1, 1.22, 1], opacity: [0.3, 0.65, 0.3] }}
-            transition={{ duration: 2.7, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 2.7, repeat: Infinity }}
           />
           <motion.div
             className="absolute w-[820px] h-[820px] rounded-full border border-[#93c5fd]/30 blur-[2.5px]"
             animate={{ scale: [1, 1.26, 1], opacity: [0.25, 0.6, 0.25] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute w-[920px] h-[920px] rounded-full border border-white/20 blur-[3px]"
-            animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }}
-            transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute w-[1040px] h-[1040px] rounded-full border border-white/15 blur-[3.5px]"
-            animate={{ scale: [1, 1.35, 1], opacity: [0.15, 0.45, 0.15] }}
-            transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 3, repeat: Infinity }}
           />
 
           {/* IMAGE */}
           <Image
             src="/images/hero.png"
             alt="Aya"
-            width={600}
+            width={750}
             height={820}
             priority
             className="relative z-10"
@@ -172,24 +155,23 @@ export default function Hero({ mode, setMode }: Props) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -60 }}
             transition={{ duration: 0.3 }}
-            className="absolute left-12 top-1/2 -translate-y-1/2 max-w-md z-20"
+            className="absolute left-1 xl:left-8 top-1/2 -translate-y-1/2 -mt-20 max-w-lg z-20"
           >
-            <h2 className="text-4xl font-extrabold text-[#9f496e]">
+            <h2 className="text-5xl font-bold tracking-tight text-[#9f496e]">
               Fullstack Development
             </h2>
 
             <p className="mt-4 text-gray-700 text-lg">
-              Development is about turning ideas into meaningful digital
+              Development is about turning ideas <br /> into meaningful digital
               experiences.
             </p>
 
-            <p className="mt-4 text-gray-700">
-              I enjoy transforming complex requirements into intuitive, reliable
-              and visually balanced interfaces and systems that genuinely help
-              users.
+            <p className="mt-3 text-gray-700">
+              I transform complex requirements into intuitive, reliable and
+              visually balanced interfaces that genuinely help users.
             </p>
 
-            <p className="mt-4 text-gray-600 italic">
+            <p className="mt-3 text-gray-600 italic">
               Creative by design — security-aware by mindset.
             </p>
           </motion.div>
@@ -204,18 +186,21 @@ export default function Hero({ mode, setMode }: Props) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 60 }}
             transition={{ duration: 0.3 }}
-            className="absolute right-12 top-1/2 -translate-y-1/2 max-w-md text-right z-20"
+            className="absolute right-1 xl:right-8 top-1/2 -translate-y-1/2  -mt-20 max-w-lg text-right z-20"
           >
-            <h2 className="text-4xl font-extrabold text-blue-200">
-              Security Analysis & Risk Assessment
+            <h2 className="text-4xl font-extrabold tracking-tight text-blue-200">
+              Security Analysis
             </h2>
-
-            <p className="mt-4 text-blue-300 text-lg">
-              Security is about safeguarding users and the systems they rely on.
+            <h2 className="text-3xl font-extrabold tracking-tight text-blue-200">
+              & Risk Assessment
+            </h2>
+            <p className="mt-5 text-blue-300 text-lg">
+              Security is about safeguarding <br /> users and the systems they rely on.
             </p>
 
             <p className="mt-4 text-blue-300">
-             Reviewing the application, its architecture and business context to analyze authentication, access control, data exposure and common security weaknesses.
+              Reviewing applications, architecture and business context to
+              identify risks, access control issues and data exposure.
             </p>
 
             <p className="mt-4 text-blue-400 italic">
@@ -224,9 +209,6 @@ export default function Hero({ mode, setMode }: Props) {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* INTERACTION HINT */}
-
     </section>
   );
 }
